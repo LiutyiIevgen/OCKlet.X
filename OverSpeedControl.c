@@ -7,6 +7,11 @@ extern long overSpeedIS2[120]; extern int overSpeedIV2[120];
 extern long overSpeedIS3[120]; extern int overSpeedIV3[120];
 extern long overSpeedIS4[120]; extern int overSpeedIV4[120];
 extern int _gisterezisNull;
+extern long _horizont1;
+extern long _horizont2;
+extern long _horizont3;
+extern int _maxVhorizont;
+extern long _zeroPlatform;
 void OverSpeedInterpolation(long* coordinate, int* speed, long* interCoordinate, int* interSpeed)
 {
                     int vStep = -100; //0.1 m/sec
@@ -48,11 +53,48 @@ int OverSpeedGetMaxV(long s,int speed,char inputSignals)
     if(speed == 0)
         return _gisterezisNull;
     int i=0;
+    int betweenHorizonts = 0;
     char inputNumber = (inputSignals & 0b00011000)>>3;
     inputNumber = (~inputNumber) & 0x3;
+    char horizontNumber0 = (inputSignals & 0b00000100)>>2;
+    horizontNumber0 = (~horizontNumber0) & 0x1;
+    char horizontNumber1 = (inputSignals & 0b00100000)>>5;
+    horizontNumber1 = (~horizontNumber1) & 0x1;
+    char horizontNumber = horizontNumber1 + horizontNumber0;
+    long horizontDif;
 
     if(speed<0)//move down
+    {
+        if(s < _horizont3)
+            betweenHorizonts = 1;
+        if(s >= _horizont3)
+            horizontDif = _horizont3 - _lowEdge;
+        else if(s >= _horizont2)
+            horizontDif = _horizont2 - _lowEdge;
+        else if(s >= _horizont1)
+            horizontDif = _horizont1 - _lowEdge;
+        else if(s >= _lowEdge)
+            horizontDif = _lowEdge - _lowEdge;
         s = _lowEdge + _highEdge - s;
+    }
+    else if (speed > 0)
+    {
+        if(s < _horizont3)
+            betweenHorizonts = 1;
+        if(s >= _horizont3)
+        {
+            if(inputNumber == 2)//liudi
+                horizontDif = _highEdge - _zeroPlatform;
+            else
+                horizontDif = _highEdge - _highEdge;
+        }
+        else if(s >= _horizont2)
+            horizontDif = _highEdge - _horizont3;
+        else if(s >= _horizont1)
+            horizontDif = _highEdge - _horizont2;
+        else if(s >= _lowEdge)
+            horizontDif = _highEdge - _horizont1;
+    }
     if(s>=_highEdge)
         s = _highEdge-1;
     long *overSpeedIS;
@@ -78,8 +120,22 @@ int OverSpeedGetMaxV(long s,int speed,char inputSignals)
         }
     for(i;;i++)
     {
-        if(overSpeedIS[i]>s)
+        if(i > 119)
+        {
+            int j = 119;
+            for(j; j>=0; j--)
+            {
+                if(overSpeedIV[j] > 0)
+                    return overSpeedIV[j];
+            }
+        }
+        if((overSpeedIS[i] - horizontDif) > s)
             break;
+    }
+    if(betweenHorizonts == 1)
+    {
+        if(_maxVhorizont <= overSpeedIV[i])
+           return _maxVhorizont;
     }
     return overSpeedIV[i];
 }

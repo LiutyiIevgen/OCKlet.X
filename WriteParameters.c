@@ -6,7 +6,7 @@ unsigned char WriteAllParameters()
     char name[] = "inf";
     DeviceInformation deviceInformation;
     deviceInformation.ObjectCount = 7;
-    deviceInformation.ParametersCount = 17;
+    deviceInformation.ParametersCount = 22;
     deviceInformation.SystemName[0] = 0;
     strcat(deviceInformation.SystemName, "don_avto_1");
     deviceInformation.DeviceName[0] = 0;
@@ -130,6 +130,31 @@ unsigned char WriteAllParameters()
     fvalue = 1.0;
     if(!AddParameter(name16,0x08,&fvalue,4))
         return 0;
-    
+
+    char name17[] = "horizont_1";
+    value = -220000;
+    if(!AddParameter(name17,0x10,&value,3))
+        return 0;
+
+    char name18[] = "horizont_2";
+    value = -190000;
+    if(!AddParameter(name18,0x10,&value,3))
+        return 0;
+
+    char name19[] = "horizont_3";
+    value = -160000;
+    if(!AddParameter(name19,0x10,&value,3))
+        return 0;
+
+    char name20[] = "maxVhorizont";
+    value = 3000;
+    if(!AddParameter(name20,0x03,&value,2))
+        return 0;
+
+    char name21[] = "zero_platform";
+    value = 0;
+    if(!AddParameter(name21,0x10,&value,3))
+        return 0;
+
     return 1;
 }

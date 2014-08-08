@@ -86,7 +86,7 @@ int main(int argc, char** argv) {
     //RtcSetTime();
     FramInitialization(); //fram init
     //read config
-    WriteAllParameters();
+    //WriteAllParameters();
 
     ReadParameterValue(ENCODER_COUNTER,&EncPositionCounter); //read position counter id = 0x2000
 

@@ -29,6 +29,11 @@ int _gisterezisNull; int buffer9;
 float _vCoefficient;
 float _aCoefficient;
 int _buffer2;
+long _horizont1;
+long _horizont2;
+long _horizont3;
+int _maxVhorizont;
+long _zeroPlatform;
 
 //parameters ids
 #define ENCODER_COUNTER 0x2001
@@ -47,6 +52,11 @@ int _buffer2;
 #define GISTEREZIS_NULL 0x200E
 #define V_COEFFICIENT 0x200F
 #define A_COEFFICIENT 0x2010
+#define HORIZONT_1 0x2011
+#define HORIZONT_2 0x2012
+#define HORIZONT_3 0x2013
+#define MAX_V_HORIZONT 0x2014
+#define ZERO_PLATFORM 0x2015
 
 void ReadConfig()
 {   
@@ -65,6 +75,11 @@ void ReadConfig()
     ReadParameterValue(GISTEREZIS_NULL,&_gisterezisNull);
     ReadParameterValue(V_COEFFICIENT,&_vCoefficient);
     ReadParameterValue(A_COEFFICIENT,&_aCoefficient);
+    ReadParameterValue(HORIZONT_1,&_horizont1);
+    ReadParameterValue(HORIZONT_2,&_horizont2);
+    ReadParameterValue(HORIZONT_3,&_horizont3);
+    ReadParameterValue(MAX_V_HORIZONT,&_maxVhorizont);
+    ReadParameterValue(ZERO_PLATFORM,&_zeroPlatform);
 }
 void ReadCodtDomainValue( int parameterId, char* overSpeedIS, char* overSpeedIV)
 {
@@ -135,6 +150,21 @@ void UpdateConfig(int parameterId)
             break;
         case A_COEFFICIENT:
             ReadParameterValue(A_COEFFICIENT,&_aCoefficient);
+            break;
+        case HORIZONT_1:
+            ReadParameterValue(HORIZONT_1,&_horizont1);
+            break;
+        case HORIZONT_2:
+            ReadParameterValue(HORIZONT_2,&_horizont2);
+            break;
+        case HORIZONT_3:
+            ReadParameterValue(HORIZONT_3,&_horizont3);
+            break;
+        case MAX_V_HORIZONT:
+            ReadParameterValue(MAX_V_HORIZONT,&_maxVhorizont);
+            break;
+        case ZERO_PLATFORM:
+            ReadParameterValue(ZERO_PLATFORM,&_zeroPlatform);
             break;
     }
 }

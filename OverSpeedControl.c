@@ -61,17 +61,33 @@ int OverSpeedGetMaxV(long s,int speed,char inputSignals)
     char horizontNumber1 = (inputSignals & 0b00100000)>>5;
     horizontNumber1 = (~horizontNumber1) & 0x1;
     char horizontNumber = horizontNumber1 + horizontNumber0;
-    long horizontDif;
+    long horizontDif = 0;
+    long borderHorizont = 0;
+    long firstHorizont = 0;
+
+    if(_horizont3 != 0)
+        borderHorizont = _horizont3;
+    else if(_horizont2 != 0)
+        borderHorizont = _horizont2;
+    else if(_horizont1 != 0)
+        borderHorizont = _horizont1;
+
+    if(_horizont1 != 0)
+        firstHorizont = _horizont1;
+    else if(_horizont2 != 0)
+        firstHorizont = _horizont2;
+    else if(_horizont3 != 0)
+        firstHorizont = _horizont3;
 
     if(speed<0)//move down
     {
-        if(s < _horizont3)
+        if(s < borderHorizont && borderHorizont != 0)
             betweenHorizonts = 1;
-        if(s >= _horizont3)
+        if(s >= _horizont3 && _horizont3 != 0)
             horizontDif = _horizont3 - _lowEdge;
-        else if(s >= _horizont2)
+        else if(s >= _horizont2 && _horizont2 != 0)
             horizontDif = _horizont2 - _lowEdge;
-        else if(s >= _horizont1)
+        else if(s >= _horizont1 && _horizont1 != 0)
             horizontDif = _horizont1 - _lowEdge;
         else if(s >= _lowEdge)
             horizontDif = _lowEdge - _lowEdge;
@@ -79,21 +95,21 @@ int OverSpeedGetMaxV(long s,int speed,char inputSignals)
     }
     else if (speed > 0)
     {
-        if(s < _horizont3)
+        if(s < borderHorizont && borderHorizont != 0)
             betweenHorizonts = 1;
-        if(s >= _horizont3)
+        if((s >= borderHorizont && borderHorizont != 0) ||(borderHorizont == 0))
         {
             if(inputNumber == 2)//liudi
                 horizontDif = _highEdge - _zeroPlatform;
             else
                 horizontDif = _highEdge - _highEdge;
         }
-        else if(s >= _horizont2)
+        else if(s >= _horizont2 && _horizont2 != 0)
             horizontDif = _highEdge - _horizont3;
-        else if(s >= _horizont1)
+        else if(s >= _horizont1 && _horizont1 != 0)
             horizontDif = _highEdge - _horizont2;
         else if(s >= _lowEdge)
-            horizontDif = _highEdge - _horizont1;
+            horizontDif = _highEdge - firstHorizont;
     }
     if(s>=_highEdge)
         s = _highEdge-1;

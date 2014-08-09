@@ -1,4 +1,4 @@
-Microchip Technology Inc, vH‚]
+Microchip Technology Inc, vH‚/
 
 Tool Name:
   c:\program files\microchip\xc16\v1.21\bin\bin\..\bin/elf-ld.exe
@@ -156,10 +156,10 @@ section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x100               0x878           0xcb4  (3252)
 .const                       0x978               0x11a           0x1a7  (423)
-.text                        0xa92              0x3ab2          0x580b  (22539)
-.dinit                      0x4544                0x4c            0x72  (114)
+.text                        0xa92              0x3b92          0x595b  (22875)
+.dinit                      0x4624                0x4c            0x72  (114)
 
-                     Total program memory used (bytes):         0x66d8  (26328) 17%
+                     Total program memory used (bytes):         0x6828  (26664) 18%
 
 
 Data Memory  [Origin = 0x800, Length = 0x2000]
@@ -473,30 +473,30 @@ External Symbols in Program Memory (by address):
                   0x003600                  _WriteAllParameters
                   0x003be8                  _OverSpeedInterpolation
                   0x003d8c                  _OverSpeedGetMaxV
-                  0x00401e                  _TryInitOverSpeedControl
-                  0x004032                  _MakeOverSpeedControl
-                  0x00405e                  _WriteBootSector
-                  0x004086                  _ReadBootSector
-                  0x004096                  _Formatting
-                  0x0040f4                  _ReadNextFat
-                  0x00411a                  _WriteToFat
-                  0x00413e                  _FindFreeClusterNum
-                  0x00418a                  _AllocateClustersSequence
-                  0x0041d8                  _ClearClustersSequence
-                  0x004208                  _FindFreeDescriptorAdr
-                  0x00427c                  _WriteDescriptorByAddress
-                  0x004296                  _ReadDescriptorByAddress
-                  0x0042b0                  _DescriptorsDefragmentation
-                  0x00436e                  _WriteDataToCluster
-                  0x0043a0                  _ReadDataFromCluster
-                  0x0043d2                  _TryMakeKolibrovka
-                  0x0044be                  _OverRiseZoneControl
-                  0x00450c                  _OnOveriseRele
+                  0x0040fe                  _TryInitOverSpeedControl
+                  0x004112                  _MakeOverSpeedControl
+                  0x00413e                  _WriteBootSector
+                  0x004166                  _ReadBootSector
+                  0x004176                  _Formatting
+                  0x0041d4                  _ReadNextFat
+                  0x0041fa                  _WriteToFat
+                  0x00421e                  _FindFreeClusterNum
+                  0x00426a                  _AllocateClustersSequence
+                  0x0042b8                  _ClearClustersSequence
+                  0x0042e8                  _FindFreeDescriptorAdr
+                  0x00435c                  _WriteDescriptorByAddress
+                  0x004376                  _ReadDescriptorByAddress
+                  0x004390                  _DescriptorsDefragmentation
+                  0x00444e                  _WriteDataToCluster
+                  0x004480                  _ReadDataFromCluster
+                  0x0044b2                  _TryMakeKolibrovka
+                  0x00459e                  _OverRiseZoneControl
+                  0x0045ec                  _OnOveriseRele
 
 External Symbols in Program Memory (by name):
 
                   0x002f7a                  _AddParameter
-                  0x00418a                  _AllocateClustersSequence
+                  0x00426a                  _AllocateClustersSequence
                   0x000efc                  _BusyUART2
                   0x0001c4                  _CAN1Initialize
                   0x0001ca                  _CAN1IsTXReady
@@ -529,12 +529,12 @@ External Symbols in Program Memory (by name):
                   0x0021d8                  _CanOpenParseRSDO
                   0x00277a                  _CanOpenSendCodtDomainMsg
                   0x0020fa                  _CanOpenSendCurrentObjectState
-                  0x0041d8                  _ClearClustersSequence
+                  0x0042b8                  _ClearClustersSequence
                   0x0004a8                  _ConfigIntCAN1
                   0x0004d0                  _ConfigIntCAN2
                   0x001654                  _ConfigurateSPI2
                   0x00312a                  _DeleteParameter
-                  0x0042b0                  _DescriptorsDefragmentation
+                  0x004390                  _DescriptorsDefragmentation
                   0x000e98                  _DigitalInputsToString
                   0x0013b8                  _DisplayInitialization
                   0x00148c                  _DisplayView
@@ -548,10 +548,10 @@ External Symbols in Program Memory (by name):
                   0x0011ec                  _EncGetV
                   0x001034                  _EncoderScan
                   0x00357e                  _FindDescriptorAdrByIndex
-                  0x00413e                  _FindFreeClusterNum
-                  0x004208                  _FindFreeDescriptorAdr
+                  0x00421e                  _FindFreeClusterNum
+                  0x0042e8                  _FindFreeDescriptorAdr
                   0x0034f8                  _FindMaxIndex
-                  0x004096                  _Formatting
+                  0x004176                  _Formatting
                   0x001ae8                  _FramInitialization
                   0x001b7c                  _FramRead
                   0x001c02                  _FramReadPositionCounter
@@ -568,22 +568,22 @@ External Symbols in Program Memory (by name):
                   0x000cbe                  _LVDinitialization
                   0x000dce                  _LongToCharArray
                   0x000d16                  _LongToString
-                  0x004032                  _MakeOverSpeedControl
-                  0x00450c                  _OnOveriseRele
+                  0x004112                  _MakeOverSpeedControl
+                  0x0045ec                  _OnOveriseRele
                   0x0004f8                  _OpenSPI2
                   0x000ede                  _OpenUART2
-                  0x0044be                  _OverRiseZoneControl
+                  0x00459e                  _OverRiseZoneControl
                   0x003d8c                  _OverSpeedGetMaxV
                   0x003be8                  _OverSpeedInterpolation
                   0x000f4a                  _PrintDigitUART2
                   0x000f2e                  _PrintStringUART2
-                  0x004086                  _ReadBootSector
+                  0x004166                  _ReadBootSector
                   0x000b20                  _ReadCodtDomainValue
                   0x000a92                  _ReadConfig
-                  0x0043a0                  _ReadDataFromCluster
-                  0x004296                  _ReadDescriptorByAddress
+                  0x004480                  _ReadDataFromCluster
+                  0x004376                  _ReadDescriptorByAddress
                   0x000e04                  _ReadDigitalInputs
-                  0x0040f4                  _ReadNextFat
+                  0x0041d4                  _ReadNextFat
                   0x00320a                  _ReadParameterName
                   0x0032be                  _ReadParameterType
                   0x00319e                  _ReadParameterValue
@@ -610,17 +610,17 @@ External Symbols in Program Memory (by name):
                   0x000fc2                  _StartTimer3
                   0x000fe8                  _StartTimer4
                   0x00100e                  _StartTimer5
-                  0x00401e                  _TryInitOverSpeedControl
-                  0x0043d2                  _TryMakeKolibrovka
+                  0x0040fe                  _TryInitOverSpeedControl
+                  0x0044b2                  _TryMakeKolibrovka
                   0x001c1a                  _TrySynchronization
                   0x000b8a                  _UpdateConfig
                   0x003600                  _WriteAllParameters
-                  0x00405e                  _WriteBootSector
+                  0x00413e                  _WriteBootSector
                   0x000f16                  _WriteCharToUART2
-                  0x00436e                  _WriteDataToCluster
-                  0x00427c                  _WriteDescriptorByAddress
+                  0x00444e                  _WriteDataToCluster
+                  0x00435c                  _WriteDescriptorByAddress
                   0x000e2e                  _WriteDigitalOutputs
-                  0x00411a                  _WriteToFat
+                  0x0041fa                  _WriteToFat
                   0x001fac                  __C1Interrupt
                   0x002008                  __C2Interrupt
                   0x0001c0                  __DefaultInterrupt
@@ -907,17 +907,17 @@ userdata
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x85d7
+.debug_info       0x000000       0x8608
  *(.debug_info)
  .debug_info      0x000000        0xa29 build/default/production/Can.o
  .debug_info      0x000a29        0xb12 build/default/production/CanOpen.o
  .debug_info      0x00153b        0x847 build/default/production/Fat.o
  .debug_info      0x001d82        0x20a build/default/production/Kolibrovka.o
  .debug_info      0x001f8c        0x49f build/default/production/OverRiseZone.o
- .debug_info      0x00242b        0x5b4 build/default/production/OverSpeedControl.o
- .debug_info      0x0029df        0x8b9 build/default/production/Parameters.o
- .debug_info      0x003298        0x4d0 build/default/production/WriteParameters.o
- .debug_info      0x003768       0x4e6f build/default/production/main.o
+ .debug_info      0x00242b        0x5e5 build/default/production/OverSpeedControl.o
+ .debug_info      0x002a10        0x8b9 build/default/production/Parameters.o
+ .debug_info      0x0032c9        0x4d0 build/default/production/WriteParameters.o
+ .debug_info      0x003799       0x4e6f build/default/production/main.o
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev     0x000000        0xbb5
@@ -932,17 +932,17 @@ userdata
  .debug_abbrev    0x00086b         0xcd build/default/production/WriteParameters.o
  .debug_abbrev    0x000938        0x27d build/default/production/main.o
 
-.debug_line       0x000000       0x3fba
+.debug_line       0x000000       0x4042
  *(.debug_line)
  .debug_line      0x000000        0x54f build/default/production/Can.o
  .debug_line      0x00054f        0x933 build/default/production/CanOpen.o
  .debug_line      0x000e82        0x4e4 build/default/production/Fat.o
  .debug_line      0x001366         0xfe build/default/production/Kolibrovka.o
  .debug_line      0x001464        0x150 build/default/production/OverRiseZone.o
- .debug_line      0x0015b4        0x3a4 build/default/production/OverSpeedControl.o
- .debug_line      0x001958        0x696 build/default/production/Parameters.o
- .debug_line      0x001fee        0x49e build/default/production/WriteParameters.o
- .debug_line      0x00248c       0x1b2e build/default/production/main.o
+ .debug_line      0x0015b4        0x42c build/default/production/OverSpeedControl.o
+ .debug_line      0x0019e0        0x696 build/default/production/Parameters.o
+ .debug_line      0x002076        0x49e build/default/production/WriteParameters.o
+ .debug_line      0x002514       0x1b2e build/default/production/main.o
 
 .debug_frame      0x000000        0x858
  *(.debug_frame)
@@ -2393,7 +2393,7 @@ __c30_signature
  .const             0x8978        0x10e build/default/production/WriteParameters.o
  .const             0x8a86          0xc build/default/production/main.o
 
-.text             0x000a92       0x3ab2
+.text             0x000a92       0x3b92
  .text            0x000a92       0x1600 build/default/production/main.o
                   0x000a92                  _ReadConfig
                   0x000b20                  _ReadCodtDomainValue
@@ -2498,31 +2498,31 @@ __c30_signature
                   0x00357e                  _FindDescriptorAdrByIndex
  .text            0x003600        0x5e8 build/default/production/WriteParameters.o
                   0x003600                  _WriteAllParameters
- .text            0x003be8        0x476 build/default/production/OverSpeedControl.o
+ .text            0x003be8        0x556 build/default/production/OverSpeedControl.o
                   0x003be8                  _OverSpeedInterpolation
                   0x003d8c                  _OverSpeedGetMaxV
-                  0x00401e                  _TryInitOverSpeedControl
-                  0x004032                  _MakeOverSpeedControl
- .text            0x00405e        0x374 build/default/production/Fat.o
-                  0x00405e                  _WriteBootSector
-                  0x004086                  _ReadBootSector
-                  0x004096                  _Formatting
-                  0x0040f4                  _ReadNextFat
-                  0x00411a                  _WriteToFat
-                  0x00413e                  _FindFreeClusterNum
-                  0x00418a                  _AllocateClustersSequence
-                  0x0041d8                  _ClearClustersSequence
-                  0x004208                  _FindFreeDescriptorAdr
-                  0x00427c                  _WriteDescriptorByAddress
-                  0x004296                  _ReadDescriptorByAddress
-                  0x0042b0                  _DescriptorsDefragmentation
-                  0x00436e                  _WriteDataToCluster
-                  0x0043a0                  _ReadDataFromCluster
- .text            0x0043d2         0xec build/default/production/Kolibrovka.o
-                  0x0043d2                  _TryMakeKolibrovka
- .text            0x0044be         0x86 build/default/production/OverRiseZone.o
-                  0x0044be                  _OverRiseZoneControl
-                  0x00450c                  _OnOveriseRele
+                  0x0040fe                  _TryInitOverSpeedControl
+                  0x004112                  _MakeOverSpeedControl
+ .text            0x00413e        0x374 build/default/production/Fat.o
+                  0x00413e                  _WriteBootSector
+                  0x004166                  _ReadBootSector
+                  0x004176                  _Formatting
+                  0x0041d4                  _ReadNextFat
+                  0x0041fa                  _WriteToFat
+                  0x00421e                  _FindFreeClusterNum
+                  0x00426a                  _AllocateClustersSequence
+                  0x0042b8                  _ClearClustersSequence
+                  0x0042e8                  _FindFreeDescriptorAdr
+                  0x00435c                  _WriteDescriptorByAddress
+                  0x004376                  _ReadDescriptorByAddress
+                  0x004390                  _DescriptorsDefragmentation
+                  0x00444e                  _WriteDataToCluster
+                  0x004480                  _ReadDataFromCluster
+ .text            0x0044b2         0xec build/default/production/Kolibrovka.o
+                  0x0044b2                  _TryMakeKolibrovka
+ .text            0x00459e         0x86 build/default/production/OverRiseZone.o
+                  0x00459e                  _OverRiseZoneControl
+                  0x0045ec                  _OnOveriseRele
 
-.dinit            0x004544         0x4c
- .dinit           0x004544         0x4c data_init
+.dinit            0x004624         0x4c
+ .dinit           0x004624         0x4c data_init

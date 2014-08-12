@@ -114,9 +114,13 @@ void UpdateConfig(int parameterId)
             break;
         case HIGH_EDGE:
             ReadParameterValue(HIGH_EDGE,&_highEdge);
+            _highEdge = _highEdge<<8;
+            _highEdge /= 256;
             break;
         case LOW_EDGE:
             ReadParameterValue(LOW_EDGE,&_lowEdge);
+            _lowEdge = _lowEdge<<8;
+            _lowEdge /= 256;
             break;
         case SYNCHRONIZATION:
             ReadParameterValue(SYNCHRONIZATION,&_synchronization);
@@ -153,12 +157,18 @@ void UpdateConfig(int parameterId)
             break;
         case HORIZONT_1:
             ReadParameterValue(HORIZONT_1,&_horizont1);
+            _horizont1 = _horizont1<<8;
+            _horizont1 /= 256;
             break;
         case HORIZONT_2:
             ReadParameterValue(HORIZONT_2,&_horizont2);
+            _horizont2 = _horizont2<<8;
+            _horizont2 /= 256;
             break;
         case HORIZONT_3:
             ReadParameterValue(HORIZONT_3,&_horizont3);
+            _horizont3 = _horizont3<<8;
+            _horizont3 /= 256;
             break;
         case MAX_V_HORIZONT:
             ReadParameterValue(MAX_V_HORIZONT,&_maxVhorizont);

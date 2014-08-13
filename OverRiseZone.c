@@ -3,16 +3,25 @@
 
 extern long _highEdge;
 extern long _lowEdge;
+extern long _zeroPlatform;
 extern int _overRizeZoneHigh;
 extern int _overRizeZoneLow;
 extern int _overRiseControl;
+long hEdge;
 char OverRiseZoneControl(long currentS)
 {
     if(!_overRiseControl)
         return;
+    char inputSignals = ReadDigitalInputs();
+    char regim = (inputSignals & 0b00011000)>>3;
+    regim = (~regim) & 0x3;
+    if(regim == 2)//liudi
+        hEdge = _zeroPlatform;
+    else
+        hEdge = _highEdge;
     if(currentS < _lowEdge - _overRizeZoneLow) //overise low
         WriteDigitalOutputs(0x3,0x2);
-    else if(currentS > _highEdge + _overRizeZoneHigh)
+    else if(currentS > hEdge + _overRizeZoneHigh)
         WriteDigitalOutputs(0x3,0x1);
     else
         WriteDigitalOutputs(0x3,0x3);

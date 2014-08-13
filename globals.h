@@ -63,7 +63,11 @@ void ReadConfig()
     ReadParameterValue(NODE_ID,&_nodeId);
     ReadParameterValue(DISTANCE_PER_MARKS,&_distancePerMarks);
     ReadParameterValue(HIGH_EDGE,&_highEdge);
+    _highEdge = _highEdge<<8;
+    _highEdge /= 256;
     ReadParameterValue(LOW_EDGE,&_lowEdge);
+    _lowEdge = _lowEdge<<8;
+    _lowEdge /= 256;
     ReadParameterValue(SYNCHRONIZATION,&_synchronization);
     ReadParameterValue(SYNCH_ZONE,&_synchZone);
     ReadParameterValue(OVER_RIZE_ZONE_HIGH,&_overRizeZoneHigh);
@@ -76,8 +80,14 @@ void ReadConfig()
     ReadParameterValue(V_COEFFICIENT,&_vCoefficient);
     ReadParameterValue(A_COEFFICIENT,&_aCoefficient);
     ReadParameterValue(HORIZONT_1,&_horizont1);
+    _horizont1 = _horizont1<<8;
+    _horizont1 /= 256;
     ReadParameterValue(HORIZONT_2,&_horizont2);
+    _horizont2 = _horizont2<<8;
+    _horizont2 /= 256;
     ReadParameterValue(HORIZONT_3,&_horizont3);
+    _horizont3 = _horizont3<<8;
+    _horizont3 /= 256;
     ReadParameterValue(MAX_V_HORIZONT,&_maxVhorizont);
     ReadParameterValue(ZERO_PLATFORM,&_zeroPlatform);
 }
